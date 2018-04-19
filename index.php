@@ -9,26 +9,43 @@ session_start();
 ?>
 
 <section class="main-container">
-<div class="main-wrapper">
-    <h2>HOME</h2>
-    <?php
+    <div class="main-wrapper">
+        <h2>HOME</h2>
 
-    if (isset($_SESSION['u_id'])){}
+        <?php
 
-    $sql = "SELECT * FROM news ORDER BY 'news_id' ASC ";
-    $result = mysqli_query($conn, $sql);
+        if (isset($_SESSION['u_id'])){}
+        include 'includes/dbh.inc.php';
 
-    if (mysqli_num_rows($result) > 0) {
+        $sql = "SELECT * FROM news ";
+        $result = mysqli_query($conn, $sql);
 
-        while($row = mysqli_fetch_assoc($result)) {
-            echo $row["news_title"]. "<br><br>"  . $row["news_image"].  " <br><br> " .$row["news_body"]. "<br><br>";
+        if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<h3>" . $row['news_title'] . "</h3>";
+                echo "<br>";
+                echo "<img src='admin/pictures/" . $row['news_image'] . "'>";
+                echo "<br>";
+                echo "<p>" . $row['news_body'] . "</p>";
+                echo "<br>";
+                echo "<div class=\"fb-share-button\" data-href=\"http://localhost:8888/Knews/index.php\" data-layout=\"button_count\" data-size=\"small\" data-mobile-iframe=\"true\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8888%2FKnews%2Findex.php&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">Share</a></div>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+            }
         }
-    } else {
-        echo "<h3><center>No news items found!<center></h3>";
-    }
 
-    ?>
+        ?>
 
-</div>
+
+
+
+    </div>
+    <!-- Footer bar, will always stay at the bottom of the page -->
+
+    <footer id=footer>
+Bringing you the best news daily
+    </footer>
 </section>
              

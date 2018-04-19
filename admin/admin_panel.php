@@ -16,7 +16,7 @@
 
 <div id="sidemenu">
  <ul>
-    <li><a href="add.php" target="_blank"> Add News Items </a></li>
+    <li><a href="adds.php" target="_blank"> Add News Items </a></li>
 	<li><a href="delete.php" target="_blank"> Delete News  </a></li>
 	<li><a href="manageusers.php" target="_blank"> Delete Users </a></li>
  </ul>
