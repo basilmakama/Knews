@@ -16,13 +16,14 @@
         <div class="main-wrapper">
             <ul>
                 <li><a href="index.php">HOME</a> </li>
-                <li><a href="#">WORLD</a> </li>
-                <li><a href="#">BUSINESS</a> </li>
-                <li><a href="#">SPORTS</a> </li>
+                <li><a href="worldnews.php">WORLD</a> </li>
+                <li><a href="business.php">BUSINESS</a> </li>
+                <li><a href="sports.php">SPORTS</a> </li>
             </ul>
             <div class="nav-login">
                 <?php
                 if (isset($_SESSION['u_id'])){
+                    echo "You are logged in!!!";
                     echo '<form action="includes/logout.inc.php" method="POST">
                         <button type="submit" name="submit">LogOut</button>
                         </form>';
@@ -31,13 +32,13 @@
                     <input type="text" name="uid" placeholder="Username/E-Mail">
                     <input type="password" name="pwd" placeholder="Password">
                     <button type="submit" name="submit">Login</button>
+
                 </form>
+                <a href="admin/admin.php">Admin</a>\';
                 <a href="signup.php">SignUp</a>';
 
                 }
                 ?>
-                <a href="admin/admin.php">Admin</a>';
-
             </div>
         </div>
     </nav>

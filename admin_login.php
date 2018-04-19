@@ -15,7 +15,7 @@ if (isset($_POST['submiy'])){
         header("Location: ../admin/admin.php?login=empty");
         exit();
     } else {
-        $sql = "SELECT * FROM admin WHERE admin_loginid='$adminid'";
+        $sql = "SELECT * FROM admin WHERE admin_loginid='admin'";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck < 1){

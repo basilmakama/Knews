@@ -16,34 +16,54 @@
 
 <div id="sidemenu">
  <ul>
-    <li><a href="add.php" target="_blank"> Add Updates </a></li>
+    <li><a href="add.php" target="_blank"> Add News Items </a></li>
 	<li><a href="delete.php" target="_blank"> Delete News  </a></li>
-	<li><a href="manage.php" target="_blank"> Manage Users </a></li>
+	<li><a href="manageusers.php" target="_blank"> Delete Users </a></li>
  </ul>
 </div>
 
 <div id="data">
 <br><br>
 
-<center><h1>News Posts</h1></center>
+<center><h1>Posts</h1></center>
 <?php
     include '../includes/dbh.inc.php';
-	
-	//add error_reporting(0); to remove errors 
-	
-	
-	$sql = "SELECT * FROM data";
+
+	// displays all the news items currently in the database
+	$sql = "SELECT * FROM news";
 	$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
    
     while($row = mysqli_fetch_assoc($result)) {
-    echo "<h4>ID: </h4>" . $row["id"]. "<br>" . "  Name: " . $row["name"].  " <br> " .  "Email: " . $row["email"] .  "<br>" . "Password: " . $row["pass"]. "<br><br><br>";
+        echo "ID:" . $row["news_id"]. "<br>" . "  Title: " . $row["news_title"].  " <br> " . "<br>";
 	 }
 } else {
-    echo "<h3><center>No user data found!<center></h3>";
+    echo "<h3><center>No news items found!<center></h3>";
 }
 ?>
+</div>
+
+<div id="data">
+    <br><br>
+
+    <center><h1>Users</h1></center>
+    <?php
+    include '../includes/dbh.inc.php';
+
+// displays all users currently registered in the database
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "ID:" . $row["user_id"]. "<br>" . "  Name: " . $row["user_uid"].  " <br> " . "<br>";
+        }
+    } else {
+        echo "<h3><center>No user data found!<center></h3>";
+    }
+    ?>
 </div>
 </body>
 </html>
