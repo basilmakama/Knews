@@ -32,6 +32,8 @@ session_start();
                 echo "<br>";
                 echo "<p><center>" . $row['news_body'] . "</center></p>";
                 echo "<br>";
+                echo "<p><center> Source: " . $row['news_source'] . "</center></p>";
+                echo "<br>";
                 echo "<center><div class=\"fb-share-button\" data-href=\"http://localhost:8888/Knews/index.php\" data-layout=\"button_count\" data-size=\"small\" data-mobile-iframe=\"true\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8888%2FKnews%2Findex.php&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">Share</a></center></div>";
                 echo "<br>";
                 echo "<br>";
