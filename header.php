@@ -34,16 +34,19 @@
                     echo "You are logged in!!!";
                     echo '<form action="includes/logout.inc.php" method="POST">
                         <button type="submit" name="submit">LogOut</button>
-                        </form>';
-                } else {
+                        </form>
+                                                <a href="profile.php">Account</a>';
+                    } else {
                     echo '<form action="includes/login.inc.php" method="POST">
                     <input type="text" name="uid" placeholder="Username/E-Mail">
                     <input type="password" name="pwd" placeholder="Password">
                     <button type="submit" name="submit">Login</button>
+                    
 
                 </form>
                 <a href="admin/admin.php">Admin</a>\';
                 <a href="signup.php">SignUp</a>';
+
 
                 }
                 ?>

@@ -12,6 +12,8 @@
 <div id="header">
 <center><img src="../images/admin_icon.png">
 <h3> Welcome to Admin Panel</h3></center>
+
+
 </div>
 
 <div id="sidemenu">
@@ -27,6 +29,9 @@
 
 <center><h1>Posts</h1></center>
 <?php
+
+session_start();
+
     include '../includes/dbh.inc.php';
 
 	// displays all the news items currently in the database
