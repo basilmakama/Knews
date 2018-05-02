@@ -26,7 +26,7 @@ session_start();
         if (mysqli_num_rows($result) > 0) {
 // displays the news items on the page
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<h3><center>" . $row['news_title'] . "</center></h3>";
+                echo "<h2><center>" . $row['news_title'] . "</center></h2>";
                 echo "<br>";
                 echo "<center><img src='admin/{$row['news_image']}'></center>";
                 echo "<br>";
